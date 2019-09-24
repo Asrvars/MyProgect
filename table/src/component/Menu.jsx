@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import "./mane.css"
+import "./css/Menu.css"
 import Table from'./Table'
 
-class Mane extends Component{
+class Menu extends Component{
     state ={
     links:[
         {href:"./Home",label:"Home"  },
         {href:"./Notes",label:"Notes"  },
         {href:"./Table",label:"Data" },
-        {href:"./Geallery", label:"Geallery"}
+        {href:"./Geallary", label:"Geallary"}
     ]
 }
     renderMenuTab(){ 
@@ -25,7 +25,7 @@ class Mane extends Component{
         render(){
             return(
             <div>
-            <nav className="nav">
+            <nav id="nav">
                 <ul>
                     {this.renderMenuTab()} 
                 </ul>
@@ -34,4 +34,4 @@ class Mane extends Component{
             );
         }
     }
-        export default Mane;
+        export default Menu;

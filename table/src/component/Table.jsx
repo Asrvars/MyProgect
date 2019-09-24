@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './table.css';
+import './css/Table.css';
 import { FaCheckCircle } from 'react-icons/fa';
 import { FaPen } from 'react-icons/fa';
 
@@ -53,7 +53,7 @@ renderTableData() {
     return this.state.data.map((data, index) => {
       const { id, name, surname, score, } = data //destructuring
           return (
-          <tr id="tr" key={this.state.data.id}>
+          <tr  key={this.state.data.id}>
             <td id="td" class="colum">{id}</td>
             <td id="td" >{name}</td>
             <td id="td">{surname}</td>

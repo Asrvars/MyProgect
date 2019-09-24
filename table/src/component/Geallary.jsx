@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Geallary.css';
+import './css/Geallary.css';
 import { IoIosAdd } from "react-icons/io";
 
 class Geallary extends Component {
