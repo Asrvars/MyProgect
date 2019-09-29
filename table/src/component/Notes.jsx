@@ -1,42 +1,50 @@
 import React, { Component } from 'react';
 
 
- function InputBunner(props){
-    if(!props.type){
-         return null;
-    }
-    return(
-         <input type="text"></input>
-    );
- }
+ 
 
 class Notes extends Component{
-    state = {showInput :false, todos:[]}
-        onInputClick =(event) =>{
-            this. setState(
-            {showInput:!this.showInput},
-            ) 
+    state={
+        showInput: false,
+        showNote: false,
+        note: '',
+    }
+    
+    onInputClick=() => {
+        if (this.state.showInput) {
+            this.setState(
+                { showNote: !this.state.showNote }
+            )
+        } 
+        else if (!this.state.showInput && this.state.showNote) {
+            this.setState(
+                { showNote: !this.state.showNote }
+            )
         }
+            this.setState(
+              { showInput: !this.state.showInput }
+            )
+    }
   
     save=(event) =>{
-    var todos = [...this.state.todos];
-    todos.push(this.newText.value);
-    this.setState({todos});
+        this.setState({ note: event.target.value });
+
+    
     }
    
     render() {
-       return (
+        return (
         <div>
-           <butoon className="btn btn-primary m-2" {this.state.showInput}  ? onClick = {this. onInputClick} : onClick = {this. save}> Add not</button>
-           <InputBunner id={this.state.showInput}/>
-            <ul>
-                {this.state.todos.map(function(todo) {
-                    return <li>{todo}</li>
-                 })}
-            </ul>
+            <button className="btn btn-primary m-2" onClick={this.onInputClick}> Add not</button>
+            {this.state.showInput ? <input type="text" onChange={this.save} /> : null}
+​            {this.state.showNote ?
+                <ul>
+                    <li>{this.state.note}</li>
+                </ul> : null}
         </div>
-      )
-            }
-        }
+        )
+    }
+}
         
 export default Notes;
+
