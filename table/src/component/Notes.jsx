@@ -1,90 +1,61 @@
 import React, { Component } from 'react';
-
-class TodoNote extends Component {
-    createTasks(note) {
-      return <li key={note.key}>{note.text}</li>
-    }
-   
-    render() {
-      var todoEntries = this.props.entries;
-      var listNotes = todoEntries.map(this.createTasks);
-   
-      return (
-        <ul>
-            {listNotes}
-        </ul>
-      );
-    }
-  };
-
-
- 
+import "./css/Note.css";
 
 class Notes extends Component{
-    state={
-        showInput: false,
-        showNote: false,
-        note: [],
-    }
-    
-    onInputClick=() => {
-        if (this.state.showInput) {
-            this.setState(
-                { showNote: !this.state.showNote }
-            )
-        } 
-        else if (!this.state.showInput && this.state.showNote) {
-            this.setState(
-                { showNote: !this.state.showNote }
-            )
-        }
+  state={
+    showInput:false,
+    todos:[],
+    ctodo:""
+  }
 
-        
-            this.setState(
-              { showInput: !this.state.showInput }
-            )
+  addtodo = () =>{
+    if (this.state.showInput){
+      this.setState(
+          { showInput:!this.state.showInput }
+      )
+  } 
+
+    else if (!this.state.showInput && !this.state.showNote ) {
+      let c=this.state.todos.slice();
+     c.push(this.state.ctodo);
+      this.setState({
+        showInput: true,
+       todos:c,
+        ctodo:""
+      })
     }
-  
-    save=(e)=> {
-        if (this._inputElement.value !== "") {
-            var newNote = {
-              text: this._inputElement.value,
-              key: Date.now()
-            };
-         
-            this.setState((prevState) => {
-              return { 
-                note: prevState.note.concat(newNote) 
-              };
-            });
-           
-            this._inputElement.value = "";
-          }
-           
-         
-             
-          e.preventDefault();
-        }
-  
-       
-    render() {
-        return(
-            <div className="todoListMain">
-                <div className="header">
-                    <form onSubmit={this.save}>
-                    {this.state.showInput ?<input  ref={(a) => {this._inputElement = a}}  />:null}
-                <button className="btn btn-primary m-2" onClick={this.onInputClick} >Add</button>
-               
-                
-​            
-                </form>
-                </div>
-                  
-                <TodoNote entries={this.state.note}/>
-                
-            </div>
-        )
-    }
+   else{
+    this.setState(
+      { showInput: !this.state.showInput,
+        ctodo:""}
+    )
+  }
+}
+
+  save=(e) =>{
+    this.setState({
+      ctodo:e.target.value
+    });
+  }
+  render(){
+    let b = this.state.todos.map((e,i) =>{
+      return(
+        <li key={i}>{e}</li>
+      );
+  });
+   
+  return(
+    <div className='container' id='cont1'>
+      <center>
+        <div className='col-md-10'>
+          {this.state.showInput?<input type="text" value={this.state.ctodo} onChange={this.save}/>:null}
+          <button  class="btn btn-secondary"onClick={this.addtodo}>Add</button>
+        </div>
+      </center>
+        <ul>{b} </ul>
+    </div>
+    ) 
+  }
 }
 
 
