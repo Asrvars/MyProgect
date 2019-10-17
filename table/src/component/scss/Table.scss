@@ -1,31 +1,31 @@
 $border:1px solid black;
 
 #data {
-    text-align: center;
-    
-    border-collapse: collapse;
-    border: 3px solid #ddd;
-    width: 80%;
-    margin-left: 150px
-  }
+  text-align: center;
+
+  border-collapse: collapse;
+  border: 3px solid #ddd;
+  width: 80%;
+  margin-left: 150px
+}
 
 
 
-  #td{
-    border:$border
-  }
+#td {
+  border: $border
+}
 
-  #data{
-    border:$border
-  }
+#data {
+  border: $border
+}
 
-  #th{
-      padding-top:10px;
-      border :1px solid black;
-  
-      background-color: blueviolet
-  }
+#th {
+  padding-top: 10px;
+  border: 1px solid black;
 
-  .colum{
-    width: 50px
-  }
+  background-color: blueviolet
+}
+
+.colum {
+  width: 50px
+}
