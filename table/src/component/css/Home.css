@@ -1,4 +1,9 @@
-.each-slide > div {
+slide-container {
+  width: 70%;
+  margin: auto;
+}
+
+.each-slide>div {
   margin: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9,4 +14,12 @@
   -ms-flex-item-align: center;
   align-self: center;
   background-size: cover;
-  height: 600px; }
+  height: 700px;
+}
+
+.Search {
+
+  margin: 700px;
+  border: 2px solid blue;
+  border-radius: 7px;
+}

@@ -21,7 +21,7 @@ class Element extends React.Component {
       return (
         <div >
           <input
-            type="text"
+            type="number"
 
 
             onChange={this.onEditChange}

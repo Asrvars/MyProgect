@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Slide } from 'react-slideshow-image';
 import nextId from "react-id-generator";
+import "antd/dist/antd.css";
+import { Input } from 'antd';
 import './css/Home.css';
 
 const images = [
@@ -19,12 +21,15 @@ const properties = {
 
 }
 
+const { Search } = Input;
+
+
 class Home extends Component {
   render() {
     let id = nextId();
     const slides = images.map((image) => {
       return <div key={id} className="each-slide">
-        <div style={{ 'backgroundImage': `url(${image})` }}></div>
+        <div style={{ 'backgroundImage': `url(${image})` }}>< Search placeholder="input search text" className="Search" enterButton /></div>
       </div>
     })
 
