@@ -1,33 +1,63 @@
 import React, { Component } from 'react';
 import './css/Geallary.css';
 import { IoIosAdd } from "react-icons/io";
+import Image from './Image'
 
 
 class Geallary extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      file: []
-      
+      file: [],
+      imaegeStatus: "loading"
+
+
     }
-    this.handleChange = this.handleChange.bind(this)
   }
-  handleChange(event) {
+
+
+  handleImageLoaded = () => {
+    this.setState({ imageStatus: "loaded" });
+  }
+
+  handleImageErrored = () => {
+    this.setState({ imageStatus: "failed to load" });
+  }
+
+  handleChange = (event) => {
     this.setState({
       file: URL.createObjectURL(event.target.files[0])
-    })
+
+    });
   }
   render() {
+
+
     return (
       <div>
-        <input type='file' id='file' onChange={this.handleChange}  ></input>
+        <input type='file' id='file' onChange={this.handleChange}>
+        </input>
         <label for='file' id='label' ><IoIosAdd /></label>
-        <img src="https://bipbap.ru/wp-content/uploads/2017/09/44_20140925_1955853838.gif" className="img-thumbnail" />
-        <img src="https://www.sunhome.ru/i/wallpapers/43/novogodnie-kartinki-animaciya.240x320.gif" className="img-thumbnail" />
-        <img src="https://bestgif.su/_ph/56/2/598465583.gif" className="img-thumbnail" />
+        <Image
+
+          // src={this.props.src}
+          onLoad={this.handleImageLoaded}
+          onError={this.handleImageErrored}
+
+        />
+        {/* {this.state.imageStatus} */}
         <img className="img" src={this.state.file} />
       </div>
     );
+
   }
 }
+
+
+
 export default Geallary;
+
+
+
+
+
