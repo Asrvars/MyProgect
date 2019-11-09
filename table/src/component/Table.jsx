@@ -30,7 +30,7 @@ class Element extends React.Component {
           <span>
             <button
 
-              type="button"
+              type="button" class= "rounded-circle"
               onClick={this.onSaveClick}
             >< FaCheckCircle />
             </button>
@@ -45,7 +45,7 @@ class Element extends React.Component {
 
 
         <button
-          className="btn btn-primary"
+           class= "rounded-circle"
           type="button"
           onClick={this.onEditClick}
         ><FaPen />
@@ -139,7 +139,7 @@ class Table extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="background">
         <h1 align="center">My Table</h1>
         <table id='data' className="table">
           <tbody>

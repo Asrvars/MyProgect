@@ -1,0 +1,33 @@
+.backgroud {
+    background-color: rosybrown;
+    display: inline;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    bottom: 0px;
+  }
+  
+  .imgGeneral {
+    background: rosybrown;
+    box-sizing: border-box;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    right: 60px;
+    padding: 50px;
+    margin: 50px;
+    bottom: 60px;
+    width: 90%;
+    height: 80%;
+  }
+  
+  .h1 {
+    background: rosybrown;
+    text-align: center
+  }
+  
+  .icon {
+    background: rosybrown;
+  }

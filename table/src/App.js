@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import {Route} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
+
 import Table from './component/Table';
 import Menu from './component/Menu';
 import Home from './component/Home';
 import Notes from './component/Notes';
-
-import {Route} from "react-router-dom";
-import {BrowserRouter} from "react-router-dom";
+import General from'./component/General'
 import  Geallary  from './component/Geallary';
 
 class App extends Component {
@@ -14,7 +15,7 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Menu/>
-          <Route  exact path='/'component={Home}/>
+          <Route  exact path='/'component={General}/>
           <Route path='/Home'component={Home}/>
           <Route path='/Table'component={Table}/>
           <Route path='/Notes'component={Notes}/>

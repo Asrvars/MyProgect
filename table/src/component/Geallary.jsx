@@ -3,25 +3,29 @@ import './css/Geallary.css';
 import { IoIosAdd } from "react-icons/io";
 import Image from './Image'
 
+class Spinner extends Component {
+  render() {
+    return (
+      <span className="sr-only">Loading...</span>
+    )
+  }
+}
 
 class Geallary extends Component {
   constructor(props) {
     super(props);
     this.state = {
       file: [],
-      imaegeStatus: "loading"
-
-
+      isFatching: true
     }
   }
 
-
   handleImageLoaded = () => {
-    this.setState({ imageStatus: "loaded" });
+    this.setState({ isFatching: false });
   }
 
   handleImageErrored = () => {
-    this.setState({ imageStatus: "failed to load" });
+    this.setState({ isFatching: "failed to load" });
   }
 
   handleChange = (event) => {
@@ -31,25 +35,15 @@ class Geallary extends Component {
     });
   }
   render() {
-
-
     return (
-      <div>
+      <div className="geallarybackground">
         <input type='file' id='file' onChange={this.handleChange}>
         </input>
         <label for='file' id='label' ><IoIosAdd /></label>
-        <Image
-
-          // src={this.props.src}
-          onLoad={this.handleImageLoaded}
-          onError={this.handleImageErrored}
-
-        />
-        {/* {this.state.imageStatus} */}
+        {this.state.isFatching ? <Image /> : <Spinner animation="border" variant="primary" />}
         <img className="img" src={this.state.file} />
       </div>
     );
-
   }
 }
 

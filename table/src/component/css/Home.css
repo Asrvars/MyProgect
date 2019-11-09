@@ -18,8 +18,10 @@ slide-container {
 }
 
 .Search {
-
-  margin: 700px;
-  border: 2px solid blue;
+  border: 1px solid rgb(192, 192, 235);
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
   border-radius: 7px;
+  background-color: aquamarine
 }

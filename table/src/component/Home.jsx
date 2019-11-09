@@ -29,7 +29,7 @@ class Home extends Component {
     let id = nextId();
     const slides = images.map((image) => {
       return <div key={id} className="each-slide">
-        <div style={{ 'backgroundImage': `url(${image})` }}>< Search placeholder="input search text" className="Search" enterButton /></div>
+        <div style={{ 'backgroundImage': `url(${image})` }}><Search placeholder="input search text" className="Search" enterButton /></div>
       </div>
     })
 
