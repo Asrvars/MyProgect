@@ -53,4 +53,7 @@ img input {
       transform: rotate(1800deg);
     }
   }
-  
+
+.hidden {
+    visibility: hidden;
+}

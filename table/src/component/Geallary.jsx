@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './css/Geallary.css';
 import { IoIosAdd } from "react-icons/io";
-import Image from './Image'
+import Images from './Images';
 
 class Spinner extends Component {
   render() {
     return (
-      <span className="sr-only">Loading...</span>
+      <span>Loading...</span>
     )
   }
 }
@@ -15,17 +15,20 @@ class Geallary extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      file: [],
-      isFatching: true
+      file: null,
+      isFetching: true
     }
+    this.loadedImages = 0;
   }
 
   handleImageLoaded = () => {
-    this.setState({ isFatching: false });
+    this.loadedImages++;
+    if (this.loadedImages === 3) 
+      setTimeout(this.setState({ isFetching: false }), 5000);
   }
 
   handleImageErrored = () => {
-    this.setState({ isFatching: "failed to load" });
+    this.setState({ isFetching: "failed to load" });
   }
 
   handleChange = (event) => {
@@ -37,11 +40,11 @@ class Geallary extends Component {
   render() {
     return (
       <div className="geallarybackground">
-        <input type='file' id='file' onChange={this.handleChange}>
-        </input>
+        <input type='file' id='file' onChange={this.handleChange} />
         <label for='file' id='label' ><IoIosAdd /></label>
-        {this.state.isFatching ? <Image /> : <Spinner animation="border" variant="primary" />}
-        <img className="img" src={this.state.file} />
+        <Images className={this.state.isFetching ? 'hidden' : 'visible'} onImageLoad={this.handleImageLoaded} />
+        {this.state.isFetching && <Spinner animation="border" variant="primary" />}
+        {this.state.file && <img className="img" src={this.state.file} />}
       </div>
     );
   }
