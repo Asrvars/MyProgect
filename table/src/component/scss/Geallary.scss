@@ -1,29 +1,29 @@
 [type="file"] {
-    height: 0;
-    overflow: hidden;
-    width: 0;
-  }
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
 
-  [type="file"] + label {
-    background: #40195E;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    margin-bottom: 1rem;
-    padding: 1rem 50px;
-  }
-  
-  img{
-    height: 320px;
-    width:240px;
-  
+[type="file"]+label {
+  background: #40195E;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  padding: 1rem 50px;
+}
 
-  input{
+img {
+  height: 320px;
+  width: 240px;
+
+
+  input {
     display: inline-block;
   }
 }
 
 .hidden {
-    visibility: hidden;
+  visibility: hidden;
 }

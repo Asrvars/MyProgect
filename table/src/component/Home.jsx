@@ -18,11 +18,9 @@ const properties = {
   infinite: true,
   indicators: true,
   arrows: true,
-
 }
 
 const { Search } = Input;
-
 
 class Home extends Component {
   render() {
@@ -32,7 +30,6 @@ class Home extends Component {
         <div style={{ 'backgroundImage': `url(${image})` }}><Search placeholder="input search text" className="Search" enterButton /></div>
       </div>
     })
-
     return (
       <Slide {...properties}>
         {slides}

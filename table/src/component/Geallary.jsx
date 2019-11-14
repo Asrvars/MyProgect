@@ -23,7 +23,7 @@ class Geallary extends Component {
 
   handleImageLoaded = () => {
     this.loadedImages++;
-    if (this.loadedImages === 3) 
+    if (this.loadedImages === 3)
       setTimeout(this.setState({ isFetching: false }), 5000);
   }
 
@@ -44,13 +44,11 @@ class Geallary extends Component {
         <label for='file' id='label' ><IoIosAdd /></label>
         <Images className={this.state.isFetching ? 'hidden' : 'visible'} onImageLoad={this.handleImageLoaded} />
         {this.state.isFetching && <Spinner animation="border" variant="primary" />}
-        {this.state.file && <img className="img" src={this.state.file} />}
+        {this.state.file && <img className="img" src={this.state.file} alt="Your foto" />}
       </div>
     );
   }
 }
-
-
 
 export default Geallary;
 

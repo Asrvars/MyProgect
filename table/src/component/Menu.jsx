@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import "./css/Menu.css"
-import Table from './Table'
 
 class Menu extends Component {
     state = {
@@ -26,6 +25,10 @@ class Menu extends Component {
         return (
             <div>
                 <nav id="nav">
+                    <h5>
+                        <img src="http://www.sathyasai.org/sites/default/files/respimg/0/9/pages/organisation/logo/ssio-logo-english.png" alt="Spain" />
+                        Spain Travel
+                </h5>
                     <ul>
                         {this.renderMenuTab()}
                     </ul>

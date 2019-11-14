@@ -15,22 +15,18 @@ class Element extends React.Component {
   onEditChange = (e) => {
     this.props.onEditChange(this.props.recordId, e.target.value);
   }
-
   renderInput() {
     if (this.props.isEditMode) {
       return (
         <div >
           <input
             type="number"
-
-
             onChange={this.onEditChange}
             value={this.props.score}
           />
           <span>
             <button
-
-              type="button" class= "rounded-circle"
+              type="button" class="rounded-circle"
               onClick={this.onSaveClick}
             >< FaCheckCircle />
             </button>
@@ -38,24 +34,18 @@ class Element extends React.Component {
         </div>
       );
     }
-
     return (
       <div>
         <span>{this.props.score}</span>
-
-
         <button
-           class= "rounded-circle"
+          class="rounded-circle"
           type="button"
           onClick={this.onEditClick}
         ><FaPen />
         </button>
-
-
       </div>
     );
   }
-
   render() {
     return (
       <tr>
@@ -70,7 +60,7 @@ class Element extends React.Component {
   }
 }
 
-class Table extends React.Component {
+class Table extends Component {
   state = {
     data: [
       { id: 1, name: 'Anna', surname: 'Ananyan', score: 10, isEditMode: false },
@@ -96,7 +86,6 @@ class Table extends React.Component {
     })
   }
 
-
   onEditChange = (recordId, value) => {
     let data = this.state.data;
     data[recordId].score = value;
@@ -113,7 +102,6 @@ class Table extends React.Component {
         <th id="th">Surname</th>
         <th id="th">Score</th>
       </tr>
-
     );
   }
 
