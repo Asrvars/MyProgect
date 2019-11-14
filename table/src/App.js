@@ -7,7 +7,7 @@ import Menu from './component/Menu';
 import Home from './component/Home';
 import Notes from './component/Notes';
 import General from'./component/General'
-import  Geallary  from './component/Geallary';
+import  Geallary  from './component/Gallery';
 
 class App extends Component {
   render() {
