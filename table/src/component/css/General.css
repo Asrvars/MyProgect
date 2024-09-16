@@ -1,0 +1,27 @@
+ .mainBackground {
+   background-image: url('https://img4.goodfon.ru/wallpaper/nbig/9/cc/toledo-ispaniia-castille-la-mancha-spain-kastiliia-la-mancha.jpg');
+   position: absolute;
+   top: 85px;
+   padding: 10px;
+   bottom: 0px;
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 90%;
+   background-size: cover;
+   background-position: center;
+ }
+
+ .button {
+   background-color: rgb(238, 222, 222);
+   border-radius: 12px;
+   margin: 3px
+ }
+
+ .img {
+   display: inline-block;
+ }
+
+ .position {
+   text-align: right;
+   top: 1500px
+ }
